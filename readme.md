@@ -1,1 +1,2 @@
-#### A repository to try out Cloudflare Workers
+#Cloudflare workers
+A repository to try out Cloudflare Workers
