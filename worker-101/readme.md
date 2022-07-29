@@ -5,4 +5,4 @@
 - This worker does additional filtering based on name, username, email, website fields (all of these results are cached as well)
 
 ##### Deployed worker Url
-![https://general.goutham.workers.dev/](https://general.goutham.workers.dev/)
+[https://general.goutham.workers.dev/](https://general.goutham.workers.dev/)
