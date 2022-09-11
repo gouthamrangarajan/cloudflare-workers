@@ -1,6 +1,6 @@
-## NUXT NITRO 101
+## NUXT 3 NITRO 101
 
-#### A simple SSR of JsonPlaceholder data hosted in Cloudflare worker (yes worker not pages)
+#### A simple SSR of JsonPlaceholder data including search hoisted in Cloudflare worker (yes worker not pages)
 
 #### Check out the [demo](https://nuxt-nitro-101.goutham.workers.dev/)
 
