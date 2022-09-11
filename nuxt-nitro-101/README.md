@@ -2,7 +2,7 @@
 
 #### A simple SSR of JsonPlaceholder data hosted in Cloudflare worker (yes worker not pages)
 
-#### Check out the demo [https://nuxt-nitro-101.goutham.workers.dev/](https://nuxt-nitro-101.goutham.workers.dev/)
+#### Check out the [demo](https://nuxt-nitro-101.goutham.workers.dev/)
 
 #### Frameworks & Libraries used
 
