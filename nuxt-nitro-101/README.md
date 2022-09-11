@@ -10,7 +10,7 @@
 
 #### Screenshots
 
-![Screenshot](https://github.com/gouthamrangarajan/cloudflare-workers/blob/main/nuxt-nitro-101/Screenshot_1.png)
-![Screenshot](https://github.com/gouthamrangarajan/cloudflare-workers/blob/main/nuxt-nitro-101/Screenshot_2.png)
-![Screenshot](https://github.com/gouthamrangarajan/cloudflare-workers/blob/main/nuxt-nitro-101/Screenshot_3.png)
-![Screenshot](https://github.com/gouthamrangarajan/cloudflare-workers/blob/main/nuxt-nitro-101/Screenshot_4.png)
+![Screenshot](https://github.com/gouthamrangarajan/cloudflare-workers/blob/main/nuxt-nitro-101/Screenshot1.png)
+![Screenshot](https://github.com/gouthamrangarajan/cloudflare-workers/blob/main/nuxt-nitro-101/Screenshot2.png)
+![Screenshot](https://github.com/gouthamrangarajan/cloudflare-workers/blob/main/nuxt-nitro-101/Screenshot3.png)
+![Screenshot](https://github.com/gouthamrangarajan/cloudflare-workers/blob/main/nuxt-nitro-101/Screenshot4.png)
