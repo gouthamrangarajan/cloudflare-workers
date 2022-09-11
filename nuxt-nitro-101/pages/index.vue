@@ -7,7 +7,7 @@ const { data, error } = await useAsyncData("posts", () =>
 );
 </script>
 <template>
-  <div class="py-2 w-full flex items-center flex-col">
+  <div class="pt-2 pb-4 w-full flex items-center flex-col">
     <PostList :data="data"></PostList>
     <transition name="slide-down" appear>
       <span class="text-red-700 italic text-sm pt-2" v-if="error"

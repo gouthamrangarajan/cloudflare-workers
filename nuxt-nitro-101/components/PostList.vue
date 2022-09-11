@@ -25,7 +25,10 @@ defineProps({
         No data found...
       </p>
     </div>
-    <div class="bg-white w-full lg:w-72 self-end mt-4">
+    <div
+      class="bg-white w-full lg:w-72 self-end mt-4 hidden lg:block"
+      v-if="data.length > 0"
+    >
       <TheSearch></TheSearch>
     </div>
   </div>
