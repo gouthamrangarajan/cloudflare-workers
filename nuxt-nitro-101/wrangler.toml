@@ -1,0 +1,9 @@
+name = "nuxt-nitro-101"
+compatibility_date = "2022-09-10"
+main=".output/server/index.mjs"
+
+[site]
+bucket = ".output/public"
+
+[build]
+command = ""
