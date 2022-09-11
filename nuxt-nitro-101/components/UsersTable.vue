@@ -1,8 +1,6 @@
 <script lang="ts" setup>
 import { userType } from "../utils/model";
-defineProps({
-  data: Array<userType>,
-});
+defineProps<{ data: userType[] }>();
 const animate = ref(true);
 onMounted(() => {
   animate.value = false;

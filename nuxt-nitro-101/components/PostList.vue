@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { postType } from "../utils/model";
-defineProps({
-  data: Array<postType>,
-});
+defineProps<{ data: postType[] }>();
 </script>
 <template>
   <div class="w-11/12 max-w-5xl flex flex-col">
