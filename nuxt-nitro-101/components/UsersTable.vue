@@ -1,13 +1,7 @@
 <script lang="ts" setup>
 import { userType } from "../utils/model";
 defineProps<{ data: userType[] }>();
-const animate = ref(true);
-onMounted(() => {
-  animate.value = false;
-  nextTick(() => {
-    animate.value = true;
-  });
-});
+const motionEl = useSlideDownMotion();
 </script>
 
 <template>
@@ -45,34 +39,32 @@ onMounted(() => {
           </th>
         </tr>
       </thead>
-      <transition name="slide-down" appear>
-        <tbody v-show="animate">
-          <tr v-for="dt in data" :key="dt.id">
-            <td class="py-2 px-4 border border-slate-200 break-all">
-              {{ dt.name }}
-            </td>
-            <td class="py-2 px-4 border border-slate-200 break-all">
-              {{ dt.username }}
-            </td>
-            <td class="py-2 px-4 border border-slate-200 break-all">
-              {{ dt.email }}
-            </td>
-            <td class="py-2 px-4 border border-slate-200 break-all">
-              {{ dt.phone }}
+      <tbody ref="motionEl">
+        <tr v-for="dt in data" :key="dt.id">
+          <td class="py-2 px-4 border border-slate-200 break-all">
+            {{ dt.name }}
+          </td>
+          <td class="py-2 px-4 border border-slate-200 break-all">
+            {{ dt.username }}
+          </td>
+          <td class="py-2 px-4 border border-slate-200 break-all">
+            {{ dt.email }}
+          </td>
+          <td class="py-2 px-4 border border-slate-200 break-all">
+            {{ dt.phone }}
+          </td>
+        </tr>
+        <template v-if="data.length == 0">
+          <tr>
+            <td
+              colspan="4"
+              class="text-center py-2 px-4 border border-slate-200 break-all text-gray-600"
+            >
+              No data found...
             </td>
           </tr>
-          <template v-if="data.length == 0">
-            <tr>
-              <td
-                colspan="4"
-                class="text-center py-2 px-4 border border-slate-200 break-all text-gray-600"
-              >
-                No data found...
-              </td>
-            </tr>
-          </template>
-        </tbody>
-      </transition>
+        </template>
+      </tbody>
     </table>
   </div>
 </template>
