@@ -8,11 +8,9 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@vueuse/motion": "2.0.0-beta.12",
     "nuxt": "3.0.0-rc.9",
     "tailwindcss": "^3.1.8",
     "wrangler": "2.0.29"
-  },
-  "dependencies": {
-    "@vueuse/motion": "2.0.0-beta.12"
   }
 }

@@ -6,10 +6,8 @@ specifiers:
   tailwindcss: ^3.1.8
   wrangler: 2.0.29
 
-dependencies:
-  '@vueuse/motion': 2.0.0-beta.12
-
 devDependencies:
+  '@vueuse/motion': 2.0.0-beta.12
   nuxt: 3.0.0-rc.9
   tailwindcss: 3.1.8
   wrangler: 2.0.29
@@ -948,7 +946,7 @@ packages:
 
   /@types/web-bluetooth/0.0.14:
     resolution: {integrity: sha512-5d2RhCard1nQUC3aHcq/gHzWYO6K0WJmAbjO7mQJgCQKtZpgXxv1rOM6O/dBDhDYYVutk1sciOgNSe+5YyfM8A==}
-    dev: false
+    dev: true
 
   /@vercel/nft/0.22.1:
     resolution: {integrity: sha512-lYYZIoxRurqDOSoVIdBicGnpUIpfyaS5qVjdPq+EfI285WqtZK3NK/dyCkiyBul+X2U2OEhRyeMdXPCHGJbohw==}
@@ -1121,7 +1119,7 @@ packages:
       '@vueuse/metadata': 8.9.4
       '@vueuse/shared': 8.9.4
       vue-demi: 0.13.11
-    dev: false
+    dev: true
 
   /@vueuse/head/0.7.10_vue@3.2.39:
     resolution: {integrity: sha512-hkvxpl99xiziDV7qAMtuzTZt5oHn6sOpdUuSlT27KhB/jVSpPrrIUKD1L/0JhLw8gCQoHGxmWalc3P7AYuzkoA==}
@@ -1133,7 +1131,7 @@ packages:
 
   /@vueuse/metadata/8.9.4:
     resolution: {integrity: sha512-IwSfzH80bnJMzqhaapqJl9JRIiyQU0zsRGEgnxN6jhq7992cPUJIRfV+JHRIZXjYqbwt07E1gTEp0R0zPJ1aqw==}
-    dev: false
+    dev: true
 
   /@vueuse/motion/2.0.0-beta.12:
     resolution: {integrity: sha512-cAZqXexLX6xo+H1N1Mv+wBSSqG4wB+BdjIuHQ50jwlelXCDxSi8gj0K/9nDS+aUZtWh6YMwS6UGCKg58jMVglA==}
@@ -1150,7 +1148,7 @@ packages:
       popmotion: 11.0.5
       style-value-types: 5.1.2
       vue-demi: 0.13.11
-    dev: false
+    dev: true
 
   /@vueuse/shared/8.9.4:
     resolution: {integrity: sha512-wt+T30c4K6dGRMVqPddexEVLa28YwxW5OFIPmzUHICjphfAuBFTTdDoyqREZNDOFJZ44ARH1WWQNCUK8koJ+Ag==}
@@ -1164,7 +1162,7 @@ packages:
         optional: true
     dependencies:
       vue-demi: 0.13.11
-    dev: false
+    dev: true
 
   /abbrev/1.1.1:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
@@ -2800,7 +2798,7 @@ packages:
     resolution: {integrity: sha512-jBTqhX6KaQVDyus8muwZbBeGGP0XgujBRbQ7gM7BRdS3CadCZIHiawyzYLnafYcvZIh5j8WE7cxZKFn7dXhu9g==}
     dependencies:
       tslib: 2.4.0
-    dev: false
+    dev: true
 
   /fresh/0.5.2:
     resolution: {integrity: sha512-zJ2mQYM18rEFOudeV4GShTGIQ7RbzA7ozbU9I/XBpm7kqgMywgmylMwXHxZJmkVoYkna9d2pVXVXPdYTP9ej8Q==}
@@ -3003,7 +3001,7 @@ packages:
 
   /hey-listen/1.0.8:
     resolution: {integrity: sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==}
-    dev: false
+    dev: true
 
   /hookable/5.3.0:
     resolution: {integrity: sha512-4gTA2q08HT8G32uIW7Jpro3rSXgT2ZTM8R6+r7H7joq90eZlqFPPTvHD6w8WZUohIrbXbDperL96ilb6dkNxNw==}
@@ -4023,7 +4021,7 @@ packages:
       hey-listen: 1.0.8
       style-value-types: 5.1.2
       tslib: 2.4.0
-    dev: false
+    dev: true
 
   /postcss-calc/8.2.4_postcss@8.4.16:
     resolution: {integrity: sha512-SmWMSJmB8MRnnULldx0lQIyhSNvuDl9HfrZkaqqE/WHAhToYsAvDq+yAsA/kIyINDszOp3Rh0GFoNuH5Ypsm3Q==}
@@ -4872,7 +4870,7 @@ packages:
     dependencies:
       hey-listen: 1.0.8
       tslib: 2.4.0
-    dev: false
+    dev: true
 
   /stylehacks/5.1.0_postcss@8.4.16:
     resolution: {integrity: sha512-SzLmvHQTrIWfSgljkQCw2++C9+Ne91d/6Sp92I8c5uHTcy/PgeHamwITIbBW9wnFTY/3ZfSXR9HIL6Ikqmcu6Q==}
@@ -5048,6 +5046,7 @@ packages:
 
   /tslib/2.4.0:
     resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
+    dev: true
 
   /type-fest/0.21.3:
     resolution: {integrity: sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==}
@@ -5441,7 +5440,7 @@ packages:
     peerDependenciesMeta:
       '@vue/composition-api':
         optional: true
-    dev: false
+    dev: true
 
   /vue-devtools-stub/0.1.0:
     resolution: {integrity: sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==}
