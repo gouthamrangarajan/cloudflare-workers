@@ -5,8 +5,6 @@ import postService from "~/services/postService";
 import { useLoaderData } from "@remix-run/react";
 import Post from "~/components/Post";
 import type { postType } from "~/utils/model";
-import { motion } from "framer-motion";
-import { slideDown } from "~/utils/animations";
 
 export const loader: LoaderFunction = async ({ request }) => {
   let searchTxt = new URL(request.url).searchParams.get("search") || "";
@@ -28,24 +26,12 @@ export default function Index() {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
           {data.map((dt) => (
-            <motion.div
-              key={dt.id}
-              variants={slideDown}
-              initial="initial"
-              animate="animate"
-            >
-              <Post key={dt.id} data={dt}></Post>
-            </motion.div>
+            <Post key={dt.id} data={dt}></Post>
           ))}
           {data.length == 0 && (
-            <motion.p
-              className="text-center py-2 px-4 w-full text-orange-600 col-span-1 lg:col-span-2 font-semibold"
-              variants={slideDown}
-              initial="initial"
-              animate="animate"
-            >
+            <p className="text-center py-2 px-4 w-full text-orange-600 col-span-1 lg:col-span-2 font-semibold">
               No data found...
-            </motion.p>
+            </p>
           )}
         </div>
         {data.length > 0 && (

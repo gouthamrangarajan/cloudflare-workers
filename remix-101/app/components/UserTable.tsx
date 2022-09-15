@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { slideDown } from "~/utils/animations";
 import type { userType } from "~/utils/model";
 
 function UserTable({ data }: TablePropsType) {
@@ -23,13 +22,7 @@ function UserTable({ data }: TablePropsType) {
       </thead>
       <tbody>
         {data.map((dt) => (
-          <motion.tr
-            key={dt.id}
-            layout="position"
-            variants={slideDown}
-            initial="initial"
-            animate="animate"
-          >
+          <motion.tr key={dt.id} layout="position">
             <td className="py-2 px-4 border border-slate-200 break-all">
               {dt.name}
             </td>
@@ -45,13 +38,7 @@ function UserTable({ data }: TablePropsType) {
           </motion.tr>
         ))}
         {data.length == 0 && (
-          <motion.tr
-            key={-1}
-            layout="position"
-            variants={slideDown}
-            initial="initial"
-            animate="animate"
-          >
+          <motion.tr key={-1} layout="position">
             <td
               colSpan={4}
               className="text-center py-2 px-4 border border-slate-200 break-all text-gray-600"

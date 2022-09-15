@@ -1,8 +1,12 @@
+import { motion } from "framer-motion";
 import type { postType } from "~/utils/model";
 
 export default function Post({ data }: PostPropsType) {
   return (
-    <div className="shadow shadow-sky-600/80 bg-white rounded-xl py-4 px-6 w-full flex flex-col relative">
+    <motion.div
+      className="shadow shadow-sky-600/80 bg-white rounded-xl py-4 px-6 w-full flex flex-col relative"
+      layout="position"
+    >
       <span
         className="text-lg text-orange-600 font-semibold truncate"
         title={data.title}
@@ -18,7 +22,7 @@ export default function Post({ data }: PostPropsType) {
           {data.user.username}
         </span>
       )}
-    </div>
+    </motion.div>
   );
 }
 type PostPropsType = {
