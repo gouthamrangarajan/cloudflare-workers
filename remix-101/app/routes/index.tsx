@@ -23,7 +23,7 @@ export default function Index() {
             User Posts from Cloudflare Worker
           </span>
           <div className="bg-white w-full lg:w-72">
-            <Search></Search>
+            <Search action="/"></Search>
           </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
@@ -53,7 +53,7 @@ export default function Index() {
             className="bg-white w-full lg:w-72 self-end mt-4 hidden lg:block"
             v-if="data.length > 0"
           >
-            <Search></Search>
+            <Search action="/"></Search>
           </div>
         )}
       </div>

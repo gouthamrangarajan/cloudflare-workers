@@ -1,7 +1,7 @@
-import { useSearchParams } from "@remix-run/react";
+import { Form, useSearchParams } from "@remix-run/react";
 import { useEffect, useRef } from "react";
 
-export default function Search() {
+export default function Search({ action }: SearchPropsType) {
   const inpRef = useRef<HTMLInputElement>(null);
   const [searchParams] = useSearchParams();
 
@@ -11,8 +11,9 @@ export default function Search() {
   }, [searchParams]);
 
   return (
-    <form
+    <Form
       method="get"
+      action={action}
       className="py-1 px-3 flex space-x-2 w-full border border-indigo-600 focus-within:ring-1 focus-within:ring-indigo-600/90 focus-within:ring-offset-2 focus-within:ring-offset-indigo-50 transition duration-300 rounded"
     >
       <svg
@@ -38,6 +39,9 @@ export default function Search() {
         aria-label="Enter search text to search"
         ref={inpRef}
       />
-    </form>
+    </Form>
   );
 }
+type SearchPropsType = {
+  action: string;
+};

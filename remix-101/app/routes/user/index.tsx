@@ -30,7 +30,7 @@ export default function Index() {
           User Table from Cloudflare Worker
         </span>
         <div className="w-full lg:w-72 self-end mb-1">
-          <Search></Search>
+          <Search action="/user"></Search>
         </div>
         <UserTable data={data}></UserTable>
       </div>
