@@ -7,7 +7,10 @@ export default function Search({ action, defaultValue }: SearchPropsType) {
 
   useEffect(() => {
     let srchTxt = searchParams.get("search");
-    if (inpRef.current && srchTxt) inpRef.current.value = srchTxt;
+    if (inpRef.current) {
+      if (srchTxt) inpRef.current.value = srchTxt;
+      else inpRef.current.value = "";
+    }
   }, [searchParams]);
 
   return (

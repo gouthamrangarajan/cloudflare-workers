@@ -6,14 +6,18 @@ import { useLoaderData } from "@remix-run/react";
 import Post from "~/components/Post";
 import type { postType } from "~/utils/model";
 
-export const loader: LoaderFunction = async ({ request }) => {
+type loaderFunctionType = { results: postType[]; search: String };
+export const loader: LoaderFunction = async ({
+  request,
+}): Promise<loaderFunctionType> => {
   let searchTxt = new URL(request.url).searchParams.get("search") || "";
-  if (!searchTxt && request.url.includes("?")) return redirect("/");
+  if (!searchTxt && request.url.includes("?")) throw redirect("/");
   let results = await postService.getPostsData(searchTxt);
   return { results, search: searchTxt };
 };
+
 export default function Index() {
-  const loadersData = useLoaderData();
+  const loadersData = useLoaderData<loaderFunctionType>();
   const data = loadersData.results as postType[];
   const search = loadersData.search as string;
   return (

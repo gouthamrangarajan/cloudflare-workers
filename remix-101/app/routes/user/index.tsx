@@ -6,9 +6,12 @@ import type { LoaderFunction } from "@remix-run/cloudflare";
 import { redirect } from "@remix-run/cloudflare";
 import Search from "~/components/Search";
 
-export const loader: LoaderFunction = async ({ request }) => {
+type loaderReturnType = { results: userType[]; search: string };
+export const loader: LoaderFunction = async ({
+  request,
+}): Promise<loaderReturnType> => {
   let searchTxt = new URL(request.url).searchParams.get("search") || "";
-  if (!searchTxt && request.url.includes("?")) return redirect("/user");
+  if (!searchTxt && request.url.includes("?")) throw redirect("/user");
   let jsonPlaceholderData = await userService.getUsersData(searchTxt);
   let userData: userType[] = jsonPlaceholderData.map((el) => ({
     id: el.id,
@@ -22,7 +25,7 @@ export const loader: LoaderFunction = async ({ request }) => {
   return { results: userData, search: searchTxt };
 };
 export default function Index() {
-  const loadersData = useLoaderData();
+  const loadersData = useLoaderData<loaderReturnType>();
   const data = loadersData.results as userType[];
   const search = loadersData.search as string;
   return (
