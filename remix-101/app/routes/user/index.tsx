@@ -19,10 +19,12 @@ export const loader: LoaderFunction = async ({ request }) => {
     username: el.username,
     website: el.website,
   }));
-  return userData;
+  return { results: userData, search: searchTxt };
 };
 export default function Index() {
-  const data = useLoaderData() as userType[];
+  const loadersData = useLoaderData();
+  const data = loadersData.results as userType[];
+  const search = loadersData.search as string;
   return (
     <div className="pt-20 pb-2 w-full flex flex-col items-center">
       <div className="bg-white shadow shadow-sky-600/80 rounded-xl py-2 lg:py-4 px-4 lg:px-6 w-11/12 lg:w-8/12 flex flex-col">
@@ -30,7 +32,7 @@ export default function Index() {
           User Table from Cloudflare Worker
         </span>
         <div className="w-full lg:w-72 self-end mb-1">
-          <Search action="/user"></Search>
+          <Search action="/user" defaultValue={search}></Search>
         </div>
         <UserTable data={data}></UserTable>
       </div>

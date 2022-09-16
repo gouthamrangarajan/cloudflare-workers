@@ -9,10 +9,13 @@ import type { postType } from "~/utils/model";
 export const loader: LoaderFunction = async ({ request }) => {
   let searchTxt = new URL(request.url).searchParams.get("search") || "";
   if (!searchTxt && request.url.includes("?")) return redirect("/");
-  return await postService.getPostsData(searchTxt);
+  let results = await postService.getPostsData(searchTxt);
+  return { results, search: searchTxt };
 };
 export default function Index() {
-  const data = useLoaderData() as postType[];
+  const loadersData = useLoaderData();
+  const data = loadersData.results as postType[];
+  const search = loadersData.search as string;
   return (
     <div className="pt-2 pb-4 w-full flex items-center flex-col">
       <div className="w-11/12 max-w-5xl flex flex-col">
@@ -21,7 +24,7 @@ export default function Index() {
             User Posts from Cloudflare Worker
           </span>
           <div className="bg-white w-full lg:w-72">
-            <Search action="/"></Search>
+            <Search action="/" defaultValue={search}></Search>
           </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
@@ -35,11 +38,8 @@ export default function Index() {
           )}
         </div>
         {data.length > 0 && (
-          <div
-            className="bg-white w-full lg:w-72 self-end mt-4 hidden lg:block"
-            v-if="data.length > 0"
-          >
-            <Search action="/"></Search>
+          <div className="bg-white w-full lg:w-72 self-end mt-4 hidden lg:block">
+            <Search action="/" defaultValue={search}></Search>
           </div>
         )}
       </div>

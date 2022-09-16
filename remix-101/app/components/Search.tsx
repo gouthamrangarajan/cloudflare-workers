@@ -1,15 +1,6 @@
-import { Form, useSearchParams } from "@remix-run/react";
-import { useEffect, useRef } from "react";
+import { Form } from "@remix-run/react";
 
-export default function Search({ action }: SearchPropsType) {
-  const inpRef = useRef<HTMLInputElement>(null);
-  const [searchParams] = useSearchParams();
-
-  useEffect(() => {
-    let srchTxt = searchParams.get("search");
-    if (inpRef.current && srchTxt) inpRef.current.value = srchTxt;
-  }, [searchParams]);
-
+export default function Search({ action, defaultValue }: SearchPropsType) {
   return (
     <Form
       method="get"
@@ -37,11 +28,12 @@ export default function Search({ action }: SearchPropsType) {
         placeholder="Type &amp; press enter to search..."
         name="search"
         aria-label="Enter text to search"
-        ref={inpRef}
+        defaultValue={defaultValue}
       />
     </Form>
   );
 }
 type SearchPropsType = {
   action: string;
+  defaultValue: string;
 };

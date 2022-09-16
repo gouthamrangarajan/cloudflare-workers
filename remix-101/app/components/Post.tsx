@@ -15,10 +15,7 @@ export default function Post({ data }: PostPropsType) {
       </span>
       <p className="py-1 px-3 mt-3">{data.body}</p>
       {data.user && (
-        <span
-          className="py-1 px-3 text-white bg-orange-600/90 absolute -bottom-2 right-6 rounded-full text-xs"
-          v-if="data.user"
-        >
+        <span className="py-1 px-3 text-white bg-orange-600/90 absolute -bottom-2 right-6 rounded-full text-xs">
           {data.user.username}
         </span>
       )}
