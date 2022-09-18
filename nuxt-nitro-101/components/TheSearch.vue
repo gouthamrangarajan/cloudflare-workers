@@ -1,6 +1,8 @@
 <script setup lang="ts">
 const searchTxt = ref<String>("");
 const route = useRoute();
+//if (route.query.search) searchTxt.value = route.query.search as string;
+const router = useRouter();
 watch(
   () => route.query.search,
   (newVal, _) => {
@@ -10,18 +12,18 @@ watch(
   { immediate: true }
 );
 const search = () => {
-  let url = window.location.href;
-  if (url.includes("?")) url = url.substring(0, url.indexOf("?"));
-  if (searchTxt.value !== "") {
-    url += `?search=${searchTxt.value}`;
-  }
-  nextTick(() => {
-    window.location.href = url;
-  });
+  if (!searchTxt.value) router.push({ name: route.name });
+  else
+    router.push({
+      name: route.name,
+      query: { search: searchTxt.value } as any,
+    });
 };
 </script>
 <template>
-  <div
+  <form
+    method="get"
+    @submit.prevent="search"
     class="py-1 px-3 flex space-x-2 w-full border border-indigo-600 focus-within:ring-1 focus-within:ring-indigo-600/90 focus-within:ring-offset-2 focus-within:ring-offset-indigo-50 transition duration-300 rounded"
   >
     <svg
@@ -43,9 +45,9 @@ const search = () => {
       type="text"
       class="flex-1 appearance-none outline-none placeholder:text-slate-600"
       placeholder="Type & press enter to search..."
+      name="search"
       v-model.trim="searchTxt"
-      @keyup.enter="search"
     />
-  </div>
+  </form>
 </template>
 <style scoped></style>

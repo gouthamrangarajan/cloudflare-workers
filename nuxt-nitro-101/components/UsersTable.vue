@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { userType } from "../utils/model";
 defineProps<{ data: userType[] }>();
-const motionEl = useSlideDownMotion();
 </script>
 
 <template>
@@ -39,7 +38,7 @@ const motionEl = useSlideDownMotion();
           </th>
         </tr>
       </thead>
-      <tbody ref="motionEl">
+      <transition-group name="records" tag="tbody">
         <tr v-for="dt in data" :key="dt.id">
           <td class="py-2 px-4 border border-slate-200 break-all">
             {{ dt.name }}
@@ -64,7 +63,7 @@ const motionEl = useSlideDownMotion();
             </td>
           </tr>
         </template>
-      </tbody>
+      </transition-group>
     </table>
   </div>
 </template>

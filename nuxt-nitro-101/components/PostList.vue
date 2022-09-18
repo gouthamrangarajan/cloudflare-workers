@@ -14,7 +14,11 @@ defineProps<{ data: postType[] }>();
         <TheSearch></TheSearch>
       </div>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+    <transition-group
+      name="records"
+      class="grid grid-cols-1 lg:grid-cols-2 gap-4"
+      tag="div"
+    >
       <Post v-for="dt in data" :key="dt.id" :data="dt"></Post>
       <p
         v-if="data.length == 0"
@@ -22,7 +26,7 @@ defineProps<{ data: postType[] }>();
       >
         No data found...
       </p>
-    </div>
+    </transition-group>
     <div
       class="bg-white w-full lg:w-72 self-end mt-4 hidden lg:block"
       v-if="data.length > 0"

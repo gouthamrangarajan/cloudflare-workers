@@ -4,12 +4,10 @@ import { postType } from "../utils/model";
 defineProps<{
   data: postType;
 }>();
-const motionEl = useSlideDownMotion();
 </script>
 <template>
   <div
     class="shadow shadow-green-600/80 bg-white rounded-xl py-4 px-6 w-full flex flex-col relative"
-    ref="motionEl"
   >
     <span
       class="text-lg text-orange-600 font-semibold truncate"
