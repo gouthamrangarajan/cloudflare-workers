@@ -54,7 +54,7 @@ defineProps<{ data: userType[] }>();
           </td>
         </tr>
         <template v-if="data.length == 0">
-          <tr>
+          <tr :key="-1">
             <td
               colspan="4"
               class="text-center py-2 px-4 border border-slate-200 break-all text-gray-600"
